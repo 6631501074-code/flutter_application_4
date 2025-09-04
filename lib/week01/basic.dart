@@ -6,7 +6,7 @@ class Basic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(title: Text('My first app'),),
+    appBar: AppBar(title: Text('My app'),),
     body: Text('Hello World'),
     floatingActionButton: FloatingActionButton(onPressed:null,child: Text('click'),),
   );
