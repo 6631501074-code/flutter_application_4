@@ -10,14 +10,36 @@ class InputDemo extends StatefulWidget {
 class _InputDemoState extends State<InputDemo> {
   String massage = '';
   TextEditingController tcName = TextEditingController();
+  TextEditingController tcPassword = TextEditingController();
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(title: Text('Input Demo')),
     body: Column(children: [
-      TextField(controller: tcName,),
+      Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: TextField(controller: tcName,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: 'Enter your name',
+          suffixIcon: IconButton(onPressed: tcName.clear, icon: Icon(Icons.clear)
+        ),),
+      ),
+      ),
+       Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: TextField(controller: tcPassword,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: 'Enter your name',
+          suffixIcon: IconButton(onPressed: tcPassword.clear, icon: Icon(Icons.clear)
+        ),),
+      ),
+      ),
+      SizedBox(height: 20,),
       ElevatedButton(onPressed: updateMassage , child: Text('Ok'),),
+      SizedBox(height: 20,),
       Text(massage)
     ],), );
   }
