@@ -10,22 +10,20 @@ class Counter extends StatefulWidget {
 class _CounterState extends State<Counter> {
   //state variable
   String massage = 'Hello';
+  int count = 0;
   @override
 
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(title: Text('Counter'),),
-    body: Text(massage),
-    floatingActionButton: FloatingActionButton(onPressed:() {
-      // debugPrint('test'); //check button
-      setState(() {
-       if (massage == 'Hello') {
-              massage = 'hi';
-            } else {
-              massage = 'Hello';
-            }
-      });
-    },child: Text('click'),),
+    appBar: AppBar(title: Text('Counter'),backgroundColor: Colors.yellow[500],),
+    body: Center(child: Text('Count: $count',style: TextStyle(fontSize: 30),)),
+    floatingActionButton: FloatingActionButton(onPressed:update ,child: Text('click',style: TextStyle(fontSize: 20),),backgroundColor: Colors.yellow[500],),
   );
+  }
+
+  void update() {
+    setState(() {
+      count++;
+    });
   }
 }
